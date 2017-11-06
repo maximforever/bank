@@ -16,7 +16,8 @@ body {
     min-height: 100vh;
     padding-top: 3vh;
     background: #ffffff;
-    background: linear-gradient(164deg,#c4e3f3,72%, #e47e36)
+    background: linear-gradient(164deg,#c4e3f3,72%, #e47e36);
+    border-bottom: 2px solid #929292;
 }
 
 #expenses-history {
@@ -139,4 +140,12 @@ body {
 .day-of-week {
     font-weight: bold;
     font-size: 0.7em;
+}
+
+.section-heading {
+    font-weight: 200;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 10px;
 }
