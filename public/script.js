@@ -59,12 +59,12 @@ function reset(){
 
 /* FIREBASE FUNCTIONS */
 
-function increaseLifetimeTotal(amount){
+function increaseLifetimeTotal(thisAmount){
 
     var purchase = db.ref("purchases").push();                  // create a new child
     
     purchase.set({                                              // give that child a value
-        amount: Math.round(amount*100)/100,  
+        amount: thisAmount.toFixed(2),  
         date: Date()
     });
     
@@ -80,10 +80,9 @@ function getTotalSpending(){
 
         for (key in snapshot.val()){
             total += snapshot.val()[key].amount;
-
-            total = Math.round(total*100)/100;
-            // console.log("total: " + total);
         }
+
+        total = total.toFixed(2);
 
         $("#lifetime-total").text(total);
 
@@ -125,7 +124,7 @@ function getSpendingHistory(){
                 }
             }
 
-            spentOnThisDay = Math.round(spentOnThisDay*100)/100;
+            spentOnThisDay = spentOnThisDay.toFixed(2);
 
             var thisId = nowMonth.toString() + nowDay.toString() + nowYear.toString();
 
