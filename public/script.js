@@ -64,7 +64,7 @@ function increaseLifetimeTotal(thisAmount){
     var purchase = db.ref("purchases").push();                  // create a new child
     
     purchase.set({                                              // give that child a value
-        amount: thisAmount.toFixed(2),  
+        amount: Math.round(thisAmount*100)/100,  
         date: Date()
     });
     
@@ -124,7 +124,7 @@ function getSpendingHistory(){
                 }
             }
 
-            spentOnThisDay = spentOnThisDay.toFixed(2);
+            spentOnThisDay = Math.round(spentOnThisDay*100)/100;
 
             var thisId = nowMonth.toString() + nowDay.toString() + nowYear.toString();
 
