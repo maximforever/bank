@@ -48,6 +48,8 @@ function main(){
 function reset(){
     total = 0;
     $("#total").text(total);
+    $("#expenses-history").find(".container").empty();
+
     getTotalSpending();
     getSpendingHistory();
 }
@@ -56,46 +58,38 @@ function reset(){
 
 
 /* FIREBASE FUNCTIONS */
-/*
-function writeLastLogin(date) {
-    db.ref("login").set({
-        lastLogin: date
-    });
-}*/
 
 function increaseLifetimeTotal(amount){
+
+    var purchase = db.ref("purchases").push();                  // create a new child
     
-    var lifetimeTotal;
-
-    db.ref("spending").once('value').then(function(snapshot) {
-        lifetimeTotal = Number(snapshot.val().total);
-        lifetimeTotal += amount;
-        
-        db.ref("spending").set({
-            total: lifetimeTotal
-        });
-
-        var purchase = db.ref("purchases").push();
-        
-        total = Math.round(total*1000)/100;
-
-
-        purchase.set({
-            amount: total,
-            date: Date()
-        });
-        
-        reset();
-        
+    purchase.set({                                              // give that child a value
+        amount: Math.round(amount*100)/100,  
+        date: Date()
     });
+    
+    reset();
+
 }
 
 function getTotalSpending(){
-    
-    db.ref("spending").once('value').then(function(snapshot) {
-        var amount = snapshot.val().total;
-        $("#lifetime-total").text(amount);
-    });
+
+     db.ref("purchases").once('value').then(function(snapshot) {
+
+        var total = 0;
+
+        for (key in snapshot.val()){
+            total += snapshot.val()[key].amount;
+
+            total = Math.round(total*100)/100;
+            // console.log("total: " + total);
+        }
+
+        $("#lifetime-total").text(total);
+
+    })
+
+
 }
 
 function getSpendingHistory(){
