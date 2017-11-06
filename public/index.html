@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank</title>
+
+
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" type="image/png" href="assets/icon.jpeg">
+    <link href = "style.css" type = "text/css" rel = "stylesheet">
+</head>
+
+<body>
+
+    
+        
+    <div id ="expenses-current">
+        <div class = "container">        
+            <div class = "lifetime-spent">
+                $<span id = "lifetime-total"></span>
+            </div>
+
+
+            <div class = "total-spent">
+                $<span id = "total" contentEditable>0</span>
+            </div>
+
+            <div class = "upload">
+                <button id = "reset">Reset</button>
+                <button id = "save-spending">Save</button>
+            </div>
+
+
+            <div class = "money-controls">
+                <button class = "money-button top" value = "0.25" id = "add-quarter">$0.25</button>
+                <button class = "money-button top" value = "1" id = "add-dollar">$1</button>
+                <br>
+                <button class = "money-button bottom" value = "5" id = "add-ten">$5</button>
+                <button class = "money-button bottom" value = "10" id = "add-ten">$10</button>
+                <button class = "money-button bottom" value = "20" id = "add-twenty">$20</button>
+            </div>
+        </div>
+    </div>
+        
+    <div id = "expenses-history">
+        <div class = "container">
+        
+
+
+
+
+        
+        </div>
+    </div>
+    
+    <!-- Alright, let's try this Firebase contraption all this kids are talking about -->
+
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+    <script src = "firebaseConfig.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase-database.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src = "script.js"></script>
+</body>
+
+</html>

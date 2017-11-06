@@ -1,0 +1,142 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+#expenses-current {
+    min-height: 100vh;
+    padding-top: 3vh;
+    background: #ffffff;
+    background: linear-gradient(164deg,#c4e3f3,72%, #e47e36)
+}
+
+#expenses-history {
+    padding: 3vh 0;
+    background: #e4f2f9;
+    font-size: 0.7em;
+}
+
+#expenses-history .container {
+    width: 96%;
+}
+
+
+
+.lifetime-spent {
+    text-align: center;
+    font-size: 2em;
+    color: #801123;
+    padding: 10px;
+    background: #F47F82;
+    border: 1px solid rgba(43, 2, 2, 0.14);
+    box-shadow: 0px 0px 4px rgba(129, 35, 35, 0.76);
+}
+
+
+.total-spent {
+    text-align: center;
+    margin: 5vh 0;
+    font-size: 5em;
+    color: red;
+}
+
+.upload button { 
+    width: 100%;
+    background: rgba(2, 50, 99, 0.62);
+    background: linear-gradient(170deg, rgba(2, 50, 99, 0.62), rgba(0, 114, 255, 0.99));
+    color: white;
+    font-size: 1.5em;
+    padding: 15px 0;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin-bottom: 5vh;
+    font-weight: 200;
+}
+
+.upload button:hover {
+    background: #6FBBFF;
+    color: black;
+}
+
+#reset {
+    margin: 3vh 0;
+    font-size: 1em;
+    padding: 10px 0;
+
+}
+
+.money-controls {
+    font-size: 0;
+    text-align: center;
+}
+
+
+.money-button {
+    padding: 10px;
+    width: 18%;
+    background: #3edc53;
+    background: linear-gradient(-2deg, rgb(104, 158, 90), 39%, rgba(85, 224, 83, 0.99));
+    margin: 1%;
+    color: #064606;
+    border: none;
+    border-radius: 10px;
+    border: 1px solid #629a62;
+}
+
+.money-button:hover {
+    background: #C0F893;
+}
+
+.top {
+    width: 48%;
+    margin-bottom: 2vh;
+}
+
+.bottom {
+    width: 31%;
+}
+
+/* SPENDING HISTORY */
+
+.date {
+    width: 5%;
+    color: #292929;
+    background: rgba(10, 10, 10, 0.2);
+    padding: 1px 10px 5px 10px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.amount {
+    border-right: 1px solid black;
+    padding: 10px;
+    display: inline-block;
+    width: 10%;
+}
+
+.amount-bar {
+    background: #4a6d9a;
+    height: 2em;
+    width: 100px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.one-day {
+    padding: 5px 0;
+}
+
+.day-of-week {
+    font-weight: bold;
+    font-size: 0.7em;
+}
