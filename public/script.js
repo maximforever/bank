@@ -131,7 +131,7 @@ function getSpendingHistory(){
 
 
             if(spentOnThisDay > 0 ||  i <=  new Date().getDate()){
-                $("#expenses-history").find(".container").append("<div class = 'historical-spending-section'><div class = 'one-day'><span class = 'date'><span class = 'day-of-week'>" + dayOfWeek + "</span><br>" + nowDay + "</span><span class = 'amount'>$" + (spentOnThisDay) + "</span><span class = 'amount-bar' id = "+ thisId + "></div></div>");
+                $("#expenses-history").find(".container").append("<div class = 'historical-spending-section'><div class = 'one-day'><span class = 'date'><span class = 'day-of-week'>" + dayOfWeek + "</span><br>" + nowDay + "</span><span class = 'amount'>$" + spentOnThisDay.toFixed(2) + "</span><span class = 'amount-bar' id = "+ thisId + "></div></div>");
             }
             
 
